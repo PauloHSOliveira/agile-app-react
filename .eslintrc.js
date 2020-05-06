@@ -1,15 +1,14 @@
 module.exports = {
   env: {
-    browser: true,
     es6: true,
+    jest: true,
+    browser: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    __DEV__: true,
   },
   parserOptions: {
     ecmaFeatures: {
@@ -18,9 +17,30 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react', 'jsx-a11y', 'import', 'react-hooks', 'prettier'],
   rules: {
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+    'import/prefer-default-export': 'off',
+    'no-unused-vars': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'global-require': 'off',
+    'react-native/no-raw-text': 'off',
+    'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off',
+    camelcase: 'off',
+    'no-console': ['error', { allow: ['tron'] }],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'no-unused-expressions': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'no-alert': 'off',
+    'no-console': 'off',
+    'default-case': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'react/button-has-type': 'off',
+    'react/style-prop-object': 'off',
+    'react/no-unescaped-entities': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
   },
 };
